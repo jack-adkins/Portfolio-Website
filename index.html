@@ -30,8 +30,18 @@
     html, body {
       height: 100%;
       font-family: 'DM Sans', sans-serif;
-      background: var(--white);
+      background: #f3f4f6;
       color: var(--text-dark);
+    }
+
+    /* ── Outer centering wrapper ── */
+    .page-center {
+      max-width: 1100px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background: var(--white);
+      box-shadow: 0 0 40px rgba(0,0,0,0.07);
+      position: relative;
     }
 
     /* ── Layout ── */
@@ -44,9 +54,8 @@
     .sidebar {
       width: var(--sidebar-width);
       min-width: var(--sidebar-width);
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
       height: 100vh;
       background: var(--white);
       border-right: 1px solid var(--border);
@@ -55,7 +64,7 @@
       align-items: flex-start;
       padding: 48px 32px 40px;
       overflow-y: auto;
-      z-index: 100;
+      flex-shrink: 0;
     }
 
     .sidebar-photo {
@@ -192,7 +201,6 @@
 
     /* ── Main Content ── */
     .main {
-      margin-left: var(--sidebar-width);
       flex: 1;
       min-height: 100vh;
       background: var(--white);
@@ -382,7 +390,6 @@
         border-bottom: 1px solid var(--border);
       }
       .main {
-        margin-left: 0;
       }
       .main-inner {
         padding: 32px 24px;
@@ -407,6 +414,7 @@
   </style>
 </head>
 <body>
+<div class="page-center">
 <div class="layout">
 
   <!-- ── SIDEBAR ── -->
@@ -627,6 +635,7 @@
     </div>
   </main>
 
+</div>
 </div>
 </body>
 </html>
